@@ -14,16 +14,16 @@ __copyright__ = "Copyright (c) 2020 Rasmus E"
 __license__ = "MIT"
 
 from pprint import pprint
-from datetime import datetime
+#from datetime import datetime
 from argparse import ArgumentParser
 import sys
 import time
 #import requests
 import getpass
 import json
-import telnetlib
-import csv
-import re
+#import telnetlib
+#import csv
+#import re
 
 import pandas as pd
 from dnacentersdk import api
