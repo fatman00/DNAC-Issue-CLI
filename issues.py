@@ -51,7 +51,7 @@ if __name__ == '__main__':
     if args.password == None or args.password == "None":
         args.password = getpass.getpass(f"Type the password for {args.username}: ")
 
-    print(f"{args.host} and username: {args.username} and password: {args.password}")
+    print(f"{args.host} and username: {args.username} and password: *******")
     
     
     # Create a DNACenterAPI connection object;
