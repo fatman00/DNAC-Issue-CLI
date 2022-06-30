@@ -63,23 +63,17 @@ if __name__ == '__main__':
                             version='2.2.3.3',
                             verify=False)
 
-    #pprint(dnac)
-    # Find all devices that have 'Switches and Hubs' in their family
-    #devices = dnac.devices.get_device_list(reachability_status='Reachable')
-    #devices = dnac.devices.get_device_list(reachability_status='Unreachable')
+
     print()
     print("Fetching the complete device list from Inventory...")
     print()
     devices = dnac.devices.get_device_list(role = "ACCESS")
-    #pprint(devices)
-    # Print all devices with reachabilityStatus as not 'Reachable'
-    #print("Listing all devices with ReachabilityStatus not in Reachable:")
 
     print(pd.DataFrame(json.loads(json.dumps(devices.response)), columns=["id", "hostname", "role"]))
 
     for device in devices.response:
         #print('{:20s} {} {} {}'.format(device.hostname, device.upTime, device.reachabilityStatus, device.errorDescription))
         print(device.id + ": "+device.role + ": "+ device.roleSource)
-        dnac.devices.update_device_role(id = device.id, role = "DIST", roleSource = "AUTO")
+        dnac.devices.update_device_role(id = device.id, role = "DISTRIBUTION", roleSource = "MANUAL")
     # Find all issues that are pressent on the DNAC
     print()
