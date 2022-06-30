@@ -77,4 +77,3 @@ if __name__ == '__main__':
         dnac.devices.update_device_role(id = device.id, role = "DISTRIBUTION", roleSource = "MANUAL")
     # Find all issues that are pressent on the DNAC
     print()
-    print()
